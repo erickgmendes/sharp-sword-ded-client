@@ -1,14 +1,11 @@
 import React from "react";
 
-export default () => {
-  if (this.props.value === undefined) return <></>;
-  return (
-    <>
-      <label>{this.props.label}</label>
-      <select>
-        <option>1</option>
-      </select>
+const ComboBox = props =>
+  <>
+    <label>{props.label}</label>
+    <select className="form-control form-control-sm">
+      {props.lista.map(x => (<option key={x.id}>{x.nome}</option>))}
+    </select>
+  </>
 
-    </>
-  );
-}
+export default ComboBox

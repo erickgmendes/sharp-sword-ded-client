@@ -1,16 +1,10 @@
 import React from 'react';
 
-import MainSidebar from './components/MainSidebar'
-import ContentForm from './components/ContentForm'
+import Ficha from './components/Ficha'
 
 const App = () =>
   <div className="App">
-    <div class="container-fluid">
-      <div class="row">
-        <MainSidebar />
-        <ContentForm />
-      </div>
-    </div>
+        <Ficha />
   </div>
 
 export default App;
