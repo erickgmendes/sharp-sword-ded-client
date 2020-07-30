@@ -9,18 +9,7 @@ const styles = {
         textAlign: 'center',
         backgroundImage: `url(${Image})`,
         marginBottom: '4px'
-    },
-    inputNomePersonagem: {
-        width: '350px',
-        height: '36px',
-        position: 'absolute',
-        top: '100px',
-        left: '60px',
-        textAlign: 'center',
-        fontSize: '25px',
-        border: 'none',
-        fontWeight: 'bold'
-    },
+    },      
     label: {
         width: '100px',
         height: '100px',
@@ -31,119 +20,132 @@ const styles = {
         marginLeft: '-50px',
         fontWeight: 'bold',
         fontSize: '12px',
+    },  
+    inputNomePersonagem: {
+        width: '350px',
+        height: '36px',        
+        top: '100px',
+        left: '60px',
+        textAlign: 'center',
+        fontSize: '25px',
+        border: 'none',
+        fontWeight: 'bold',
+        position: 'absolute',
+    },
+    inputs: {
+        position: 'absolute',
+        height: '24px',
+        fontSize: '16px',
+        border: 'none',
+    },
+    inputsCima: {
+        top: '81px',
+    },
+    inputsBaixo: {
+        top: '135px',
     },
     inputClasse: {
-        height: '24px',
-        position: 'absolute',
-        fontSize: '16px',
-        top: '81px',
         left: '517px',
         width: '185px',
-        border: 'none',
     },
     inputNivel: {
-        height: '24px',
-        position: 'absolute',
-        fontSize: '16px',
-        top: '81px',
         left: '702px',
         width: '45px',
-        //textAlign: 'right',
-        border: 'none',
     },
     inputAntecedente: {
-        height: '24px',
-        position: 'absolute',
-        fontSize: '16px',
-        top: '81px',
         left: '751px',
         width: '200px',
-        border: 'none',
     },
     inputNomeJogador: {
-        height: '24px',
-        position: 'absolute',
-        fontSize: '16px',
-        top: '81px',
         left: '954px',
         width: '194px',
-        border: 'none',
     },
-    inputRaca: {
-        height: '24px',
-        position: 'absolute',
-        fontSize: '16px',
-        top: '135px',
+    inputRaca: {        
         left: '517px',
         width: '185px',
-        border: 'none',
     },
     inputTendencia: {
-        height: '24px',
-        position: 'absolute',
-        fontSize: '16px',
-        top: '135px',
         left: '751px',
         width: '200px',
-        border: 'none',
     },
     inputXp: {
-        height: '24px',
-        position: 'absolute',
-        fontSize: '16px',
-        top: '135px',
         left: '954px',
         width: '194px',
-        border: 'none',
     },
-
 };
 
 const DadosBasicos = props =>
     <div style={styles.container}>
         <input
-            style={styles.inputNomePersonagem}
+            style={{
+                ...styles.inputs, 
+                ...styles.inputNomePersonagem
+            }}
             type="text"
             defaultValue={props.nomePersonagem}
         />
         <input
-            style={styles.inputClasse}
+            style={{
+                ...styles.inputs, 
+                ...styles.inputsCima, 
+                ...styles.inputClasse
+            }}
             type="text"
             value={props.classe}
-            readOnly
         />
         <input        
-            style={styles.inputNivel}
+            style={{
+                ...styles.inputs, 
+                ...styles.inputsCima, 
+                ...styles.inputNivel            
+            }}
             type="text"
             value={props.nivel}
-            readOnly
         />
         <input
-            style={styles.inputAntecedente}
+            style={{
+                ...styles.inputs, 
+                ...styles.inputsCima, 
+                ...styles.inputAntecedente
+            }}
             type="text"
             value={props.antecedente}
-            readOnly
         />
         <input
-            style={styles.inputNomeJogador}
+            style={{
+                ...styles.inputs, 
+                ...styles.inputsCima, 
+                ...styles.inputNomeJogador
+            }}
             type="text"
             value={props.nomeJogador}
-            readOnly
         />
         <input
-            style={styles.inputRaca}
+            style={{
+                ...styles.inputs, 
+                ...styles.inputsBaixo, 
+                ...styles.inputRaca
+            }}
             type="text"
             value={props.raca}
             readOnly
         />
         <input
-            style={styles.inputTendencia}
+            style={{
+                ...styles.inputs, 
+                ...styles.inputsBaixo, 
+                ...styles.inputTendencia
+            }}
             type="text"
             value={props.tendencia}
             readOnly
         />
         <input
-            style={styles.inputXp}
+            style={{
+                ...styles.inputs, 
+                ...styles.inputsBaixo, 
+                ...styles.inputXp
+            }}
             type="text"
             value={props.xp}
             readOnly

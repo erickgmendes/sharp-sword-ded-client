@@ -6,52 +6,46 @@ const styles = {
     container: {
         height: 132,
         width: 112,
-
         backgroundImage: `url(${Image})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        
         marginLeft: 0,
         marginTop: 0,
-        marginBottom: 10,
+        marginBottom: 30,
     },
     label: {
-        width: '100px',
-        height: '100px',
-        top: '55px',
-        left: '70px',
-
+        width: 100,
+        height: 100,
+        top: 55,
+        left: 70,
         position: 'absolute',
-        marginTop: '-50px',
-        marginLeft: '-50px',
-        
+        marginTop: -50,
+        marginLeft: -50,
         fontWeight: 'bold',
-        fontSize: '12px',
+        fontSize: 12,
         textAlign: 'center',
         //border: 'solid',
+        //backgroundColor: '#dedfdf',
+    },
+    inputs: {
+        position: 'absolute',
+        textAlign: 'center',
+        border: 'none',
+        fontWeight: 'bold'
     },
     inputValor: {
-        width: '50px',
-        height: '40px',
-        position: 'absolute',
-        top: '35px',
-        left: '47px',
-        textAlign: 'center',
-        fontSize: '36px',
-        border: 'none',
-        //backgroundColor: '#dedfdf',
-        fontWeight: 'bold'
+        width: 50,
+        height: 40,
+        top: 35,
+        left: 47,
+        fontSize: 36,
     },
     inputModificador: {
-        width: '34px',
-        height: '18px',
-        position: 'absolute',
-        top: '99px',
-        left: '54px',
-        textAlign: 'center',
-        fontSize: '14px',
-        border: 'none',
-        fontWeight: 'bold'
+        width: 34,
+        height: 18,
+        top: 99,
+        left: 54,
+        fontSize: 14,
     },
 };
 
@@ -63,7 +57,10 @@ const Habilidade = props =>
             maxLength="2"
             min="3"
             max="18"
-            style={styles.inputValor}
+            style={{
+                ...styles.inputs, 
+                ...styles.inputValor
+            }}
             label={props.label}
             value={props.value}
             onChange={props.onChange}
@@ -71,7 +68,10 @@ const Habilidade = props =>
         <input
             readOnly
             type="text"
-            style={styles.inputModificador}
+            style={{
+                ...styles.inputs, 
+                ...styles.inputModificador
+            }}
             value={props.modificador}
         />
 
