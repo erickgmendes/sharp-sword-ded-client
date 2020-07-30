@@ -6,9 +6,29 @@ const styles = {
     container: {
         height: 132,
         width: 112,
-        textAlign: 'center',
+
         backgroundImage: `url(${Image})`,
-        marginBottom: '20px'
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        
+        marginLeft: 0,
+        marginTop: 0,
+        marginBottom: 10,
+    },
+    label: {
+        width: '100px',
+        height: '100px',
+        top: '55px',
+        left: '70px',
+
+        position: 'absolute',
+        marginTop: '-50px',
+        marginLeft: '-50px',
+        
+        fontWeight: 'bold',
+        fontSize: '12px',
+        textAlign: 'center',
+        //border: 'solid',
     },
     inputValor: {
         width: '50px',
@@ -19,18 +39,8 @@ const styles = {
         textAlign: 'center',
         fontSize: '36px',
         border: 'none',
+        //backgroundColor: '#dedfdf',
         fontWeight: 'bold'
-    },
-    label: {
-        width: '100px',
-        height: '100px',
-        position: 'absolute',
-        top: '55px',
-        left: '72px',
-        marginTop: '-50px',
-        marginLeft: '-50px',
-        fontWeight: 'bold',
-        fontSize: '12px',
     },
     inputModificador: {
         width: '34px',
@@ -43,23 +53,26 @@ const styles = {
         border: 'none',
         fontWeight: 'bold'
     },
-
 };
 
 const Habilidade = props =>
     <div style={styles.container}>
         <label style={styles.label}>{props.label}</label>
         <input
-            style={styles.inputValor}
             type="text"
             maxLength="2"
-            defaultValue={props.value}
+            min="3"
+            max="18"
+            style={styles.inputValor}
+            label={props.label}
+            value={props.value}
+            onChange={props.onChange}
         />
         <input
-            style={styles.inputModificador}
-            type="text"
-            value={props.modificador}
             readOnly
+            type="text"
+            style={styles.inputModificador}
+            value={props.modificador}
         />
 
     </div>

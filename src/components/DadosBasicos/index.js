@@ -112,8 +112,7 @@ const DadosBasicos = props =>
             value={props.classe}
             readOnly
         />
-        <input
-        
+        <input        
             style={styles.inputNivel}
             type="text"
             value={props.nivel}
