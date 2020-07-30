@@ -113,6 +113,7 @@ const DadosBasicos = props =>
             readOnly
         />
         <input
+        
             style={styles.inputNivel}
             type="text"
             value={props.nivel}
