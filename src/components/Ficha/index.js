@@ -1,14 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
 // Componentes
-import TextBox from "../TextBox";
-import DisabledTextBox from "../DisabledTextBox";
-import ComboBox from "../ComboBox";
+import TextBox from "../TextBox"
+import ComboBox from "../ComboBox"
+import Habilidade from "../Habilidade"
+import DadosBasicos from "../DadosBasicos"
 
 // API
 //import { fetchRacas } from "../../service/raca-api";
 //import { fetchClasses } from "../../service/classe-api";
-import { fetchNiveis } from "../../service/nivel-api";
+import { fetchNiveis } from "../../service/nivel-api"
 
 export default class Ficha extends Component {
   constructor(props) {
@@ -57,15 +58,54 @@ export default class Ficha extends Component {
   render() {
     return (
       <>
+        <img src=""></img>
         <form onSubmit={this.onFormSubmit}>
           <div className="container">
             <div className="row">
               <div className="col-sm">
-                <h4>Ficha de Personagem</h4>
-                <hr />
+                <DadosBasicos />
+          </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4">
+                <TextBox
+                  label="Nome do Jogador"
+                  value={this.state.nomePersonagem}
+                  onChange={e => this.setState({ nomePersonagem: e.target.value })}
+                />
+              </div>
+              <div className="col-sm-4">
+                <TextBox
+                  label="Nome do Personagem"
+                  value={this.state.nomePersonagem}
+                  onChange={e => this.setState({ nomePersonagem: e.target.value })}
+                />
+              </div>
+              <div className="col-sm-2">
+                <ComboBox
+                  label="Nível"
+                  value={this.state.nivel}
+                  onChange={e => this.setState({ nivel: e.target.value })}
+                  lista={this.state.niveis}
+                />
+              </div>
+              <div className="col-sm-2">
+                <TextBox
+                  label="XP"
+                  value={this.state.nomePersonagem}
+                  onChange={e => this.setState({ nomePersonagem: e.target.value })}
+                />
               </div>
             </div>
             <div className="row">
+              <div className="col-sm">
+                <ComboBox
+                  label="Classe"
+                  value={this.state.classe}
+                  onChange={e => this.setState({ classe: e.target.value })}
+                  lista={this.state.classes}
+                />
+              </div>
               <div className="col-sm">
                 <ComboBox
                   label="Raça"
@@ -76,7 +116,7 @@ export default class Ficha extends Component {
               </div>
               <div className="col-sm">
                 <ComboBox
-                  label="Nível"
+                  label="Antecedente"
                   value={this.state.nivel}
                   onChange={e => this.setState({ nivel: e.target.value })}
                   lista={this.state.niveis}
@@ -84,20 +124,133 @@ export default class Ficha extends Component {
               </div>
               <div className="col-sm">
                 <ComboBox
-                  label="Classe"
-                  value={this.state.classe}
-                  onChange={e => this.setState({ classe: e.target.value })}
-                  lista={this.state.classes}
+                  label="Tendência"
+                  value={this.state.nivel}
+                  onChange={e => this.setState({ nivel: e.target.value })}
+                  lista={this.state.niveis}
                 />
               </div>
             </div>
+            <hr />
+            <div className="row">
+              <div className="col-sm-4">
+                <div className="row">
+                  <div className="col-sm-6">
+                    <Habilidade
+                      label="FORÇA"
+                      value="30"
+                      modificador="+10"
+                    />
+                  </div>
+                  <div className="col-sm-6">
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-4">
+              </div>
+              <div className="col-sm-4">
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4">
+                <div className="row">
+                  <div className="col-sm-6">
+                    <Habilidade
+                      label="DESTREZA"
+                      value="18"
+                      modificador="+4"
+                    />
+                  </div>
+                  <div className="col-sm-6">
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-4">
+              </div>
+              <div className="col-sm-4">
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4">
+                <div className="row">
+                  <div className="col-sm-6">
+                    <Habilidade
+                      label="CONSTITUIÇÃO"
+                      value="30"
+                      modificador="+10"
+                    />
+                  </div>
+                  <div className="col-sm-6">
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-4">
+              </div>
+              <div className="col-sm-4">
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4">
+                <div className="row">
+                  <div className="col-sm-6">
+                    <Habilidade
+                      label="INTELIGÊNCIA"
+                      value="18"
+                      modificador="+4"
+                    />
+                  </div>
+                  <div className="col-sm-6">
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-4">
+              </div>
+              <div className="col-sm-4">
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4">
+                <div className="row">
+                  <div className="col-sm-6">
+                    <Habilidade
+                      label="SABEDORIA"
+                      value="18"
+                      modificador="+4"
+                    />
+                  </div>
+                  <div className="col-sm-6">
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-4">
+              </div>
+              <div className="col-sm-4">
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-4">
+                <div className="row">
+                  <div className="col-sm-6">
+                    <Habilidade
+                      label="CARISMA"
+                      value="18"
+                      modificador="+4"
+                    />
+                  </div>
+                  <div className="col-sm-6">
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-4">
+              </div>
+              <div className="col-sm-4">
+              </div>
+            </div>
+
+
             <div className="row">
               <div className="col-sm">
-                <TextBox
-                  label="Nome do Personagem"
-                  value={this.state.nomePersonagem}
-                  onChange={e => this.setState({ nomePersonagem: e.target.value })}
-                />
+                Vago
               </div>
               <div className="col-sm">
                 <TextBox
@@ -126,7 +279,7 @@ export default class Ficha extends Component {
               </div>
             </div>
           </div>
-        </form>
+        </form >
       </>
     );
   }
