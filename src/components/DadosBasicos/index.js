@@ -3,21 +3,21 @@ import React from "react"
 import Image from '../../images/dados-basicos.png'
 
 const styles = {
-    habilidadeContainer: {
+    container: {
         height: 219,
         width: 1177,
         textAlign: 'center',
         backgroundImage: `url(${Image})`,
         marginBottom: '4px'
     },
-    inputValor: {
-        width: '50px',
-        height: '40px',
+    inputNomePersonagem: {
+        width: '350px',
+        height: '36px',
         position: 'absolute',
-        top: '35px',
-        left: '47px',
+        top: '100px',
+        left: '60px',
         textAlign: 'center',
-        fontSize: '36px',
+        fontSize: '25px',
         border: 'none',
         fontWeight: 'bold'
     },
@@ -32,36 +32,122 @@ const styles = {
         fontWeight: 'bold',
         fontSize: '12px',
     },
-    inputModificador: {
-        width: '34px',
-        height: '18px',
+    inputClasse: {
+        height: '24px',
         position: 'absolute',
-        top: '99px',
-        left: '54px',
-        textAlign: 'center',
-        fontSize: '14px',
+        fontSize: '16px',
+        top: '81px',
+        left: '517px',
+        width: '185px',
         border: 'none',
-        fontWeight: 'bold'
+    },
+    inputNivel: {
+        height: '24px',
+        position: 'absolute',
+        fontSize: '16px',
+        top: '81px',
+        left: '702px',
+        width: '45px',
+        //textAlign: 'right',
+        border: 'none',
+    },
+    inputAntecedente: {
+        height: '24px',
+        position: 'absolute',
+        fontSize: '16px',
+        top: '81px',
+        left: '751px',
+        width: '200px',
+        border: 'none',
+    },
+    inputNomeJogador: {
+        height: '24px',
+        position: 'absolute',
+        fontSize: '16px',
+        top: '81px',
+        left: '954px',
+        width: '194px',
+        border: 'none',
+    },
+    inputRaca: {
+        height: '24px',
+        position: 'absolute',
+        fontSize: '16px',
+        top: '135px',
+        left: '517px',
+        width: '185px',
+        border: 'none',
+    },
+    inputTendencia: {
+        height: '24px',
+        position: 'absolute',
+        fontSize: '16px',
+        top: '135px',
+        left: '751px',
+        width: '200px',
+        border: 'none',
+    },
+    inputXp: {
+        height: '24px',
+        position: 'absolute',
+        fontSize: '16px',
+        top: '135px',
+        left: '954px',
+        width: '194px',
+        border: 'none',
     },
 
 };
 
 const DadosBasicos = props =>
-    <div style={styles.habilidadeContainer}>
-        <label style={styles.label}>{props.label}</label>
+    <div style={styles.container}>
         <input
-            style={styles.inputValor}
+            style={styles.inputNomePersonagem}
             type="text"
-            maxLength="2"
-            value={props.value}
+            defaultValue={props.nomePersonagem}
         />
         <input
-            style={styles.inputModificador}
+            style={styles.inputClasse}
             type="text"
-            value={props.modificador}
+            value={props.classe}
             readOnly
         />
-
+        <input
+            style={styles.inputNivel}
+            type="text"
+            value={props.nivel}
+            readOnly
+        />
+        <input
+            style={styles.inputAntecedente}
+            type="text"
+            value={props.antecedente}
+            readOnly
+        />
+        <input
+            style={styles.inputNomeJogador}
+            type="text"
+            value={props.nomeJogador}
+            readOnly
+        />
+        <input
+            style={styles.inputRaca}
+            type="text"
+            value={props.raca}
+            readOnly
+        />
+        <input
+            style={styles.inputTendencia}
+            type="text"
+            value={props.tendencia}
+            readOnly
+        />
+        <input
+            style={styles.inputXp}
+            type="text"
+            value={props.xp}
+            readOnly
+        />
     </div>
 
 export default DadosBasicos

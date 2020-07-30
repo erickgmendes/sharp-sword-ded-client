@@ -3,12 +3,12 @@ import React from "react"
 import Image from '../../images/habilidade.png'
 
 const styles = {
-    habilidadeContainer: {
+    container: {
         height: 132,
         width: 112,
         textAlign: 'center',
         backgroundImage: `url(${Image})`,
-        marginBottom: '4px'
+        marginBottom: '20px'
     },
     inputValor: {
         width: '50px',
@@ -47,13 +47,13 @@ const styles = {
 };
 
 const Habilidade = props =>
-    <div style={styles.habilidadeContainer}>
+    <div style={styles.container}>
         <label style={styles.label}>{props.label}</label>
         <input
             style={styles.inputValor}
             type="text"
             maxLength="2"
-            value={props.value}
+            defaultValue={props.value}
         />
         <input
             style={styles.inputModificador}
