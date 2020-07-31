@@ -1,104 +1,108 @@
 import React from "react"
 
-import Image from '../../images/testes-resistencia.png'
-
 const styles = {
     container: {
-        width: 240,
-        height: 214,
-        backgroundImage: `url(${Image})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        marginLeft: 0,
-        marginTop: 0,
+        border: 'solid',
+        borderTopLeftRadius: 15,
+        borderColor: 'black',
+        borderBottomRightRadius: 15,
+        borderWidth: 3,
         marginBottom: 10,
+        maxHeight: 800,
+        padding: 12,
+        paddingTop: 0,
+        paddingBottom: 1,
+    },
+    label: {
+        fontSize: 14,
+    },
+    titulo: {
+        border: 'solid',
+        borderTopLeftRadius: 15,
+        borderColor: 'black',
+        color: 'white',
+        background: 'black',
+        paddingLeft: 0,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 14,
+        marginBottom: 8,
     },
     inputs: {
         width: 32,
-        height: 16,
-        position: 'absolute',
+        height: 20,
         left: 57,
         textAlign: 'center',
         fontSize: 14,
-        border: 'none',
         fontWeight: 'bold'
-    },
-    inputForca: {
-        top: 14,
-    },
-    inputDestreza: {
-        top: 42,
-    },
-    inputConstituicao: {
-        top: 70,
-    },
-    inputInteligencia: {
-        top: 98,
-    },
-    inputSabedoria: {
-        top: 126,
-    },
-    inputCarisma: {
-        top: 154,
     },
 };
 
 const TestesResistencia = props =>
-    <div style={styles.container}>
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputForca
-            }}
-            value={props.forcaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputDestreza
-            }}
-            value={props.destrezaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputConstituicao
-            }}
-            value={props.constituicaoModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputInteligencia
-            }}
-            value={props.inteligenciaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputSabedoria
-            }}
-            value={props.sabedoriaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputCarisma
-            }}
-            value={props.carismaModificador}
-        />
+    <div className="container" style={styles.container}>
+
+        <div className="row align-items-start" style={styles.titulo}>
+            <div className="col">
+                <h6>TESTES DE RESISTÊNCIA</h6>
+            </div>
+        </div>
+
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={styles.inputs}
+                    value={props.forcaModificador}
+                /> <label style={styles.label}>Força</label>
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.destrezaModificador}
+                /> <label style={styles.label}>Destreza</label>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.constituicaoModificador}
+                /> <label style={styles.label}>Constituição</label>
+
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.inteligenciaModificador}
+                /> <label style={styles.label}>Inteligência</label>
+            </div>
+        </div>
+
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.sabedoriaModificador}
+                /> <label style={styles.label}>Sabedoria</label>
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.carismaModificador}
+                /> <label style={styles.label}>Carisma</label>
+            </div>
+        </div>
     </div>
 
 export default TestesResistencia

@@ -1,15 +1,19 @@
 import React, { Component } from "react"
 
 // Componentes
-import DadosBasicos from "../DadosBasicos"
 import Habilidades from "../Habilidades"
-import Inspiracao from "../Inspiracao"
-import BonusProficiencia from "../BonusProficiencia"
 import TestesResistencia from "../TestesResistencia"
 import Pericias from "../Pericias"
+
+import BonusProficiencia from "../BonusProficiencia"
+import DadosBasicos from "../DadosBasicos"
+import Inspiracao from "../Inspiracao"
 import SabedoriaPassivaPercepcao from "../SabedoriaPassivaPercepcao"
 import IdiomasProficiencias from "../IdiomasProficiencias"
-
+import ClasseArmadura from "../ClasseArmadura"
+import Iniciativa from "../Iniciativa"
+import Deslocamento from "../Deslocamento"
+import Temp from "../Temp"
 
 // API
 //import { fetchRacas } from "../../service/raca-api";
@@ -35,18 +39,18 @@ export default class Ficha extends Component {
       corOlhos: "",
       corCabelos: "",
       corPele: "",
-      forca: "3",
-      destreza: "3",
-      constituicao: "3",
-      inteligencia: "3",
-      sabedoria: "3",
-      carisma: "3",
-      forcaModificador: "-4",
-      destrezaModificador: "-4",
-      constituicaoModificador: "-4",
-      inteligenciaModificador: "-4",
-      sabedoriaModificador: "-4",
-      carismaModificador: "-4",
+      forca: "",
+      destreza: "",
+      constituicao: "",
+      inteligencia: "",
+      sabedoria: "",
+      carisma: "",
+      forcaModificador: "",
+      destrezaModificador: "",
+      constituicaoModificador: "",
+      inteligenciaModificador: "",
+      sabedoriaModificador: "",
+      carismaModificador: "",
 
       classes: [],
       racas: [],
@@ -69,7 +73,7 @@ export default class Ficha extends Component {
 
   calcularModificadorHabilidade = (valor) => {
     switch (valor) {
-      //case '1': return '-5'; break;
+      case '1': return '-5'; break;
       case '2': case '3': return '-4'
       case '4': case '5': return '-3'
       case '6': case '7': return '-2'
@@ -85,7 +89,7 @@ export default class Ficha extends Component {
       case '26': case '27': return '+8'
       case '28': case '29': return '+9'
       case '30': return '+10'
-      default: return '-5'
+      default: return ''
     }
   }
 
@@ -141,186 +145,61 @@ export default class Ficha extends Component {
   render() {
     return (
       <form onSubmit={this.onFormSubmit}>
-        <div className="container">
-          <div className="row">
-            <div className="col-sm">
-              <DadosBasicos
-                nomePersonagem="Darth Vader Skywalker"
-                classe="Guerreiro"
-                raca="Humano"
-                nivel="1"
-                antecedente="Criminais"
-                nomeJogador="Erick Mendes"
-                tendencia="Agressivo"
-                xp="1000"
+        <div className="container" style={{ marginTop: 20 }}>
+
+
+          <div class="row">
+            <div class="col-sm">
+              <Habilidades
+                forca={this.state.forca}
+                forcaModificador={this.state.forcaModificador}
+                onChangeForca={this.onChangeForca}
+
+                destreza={this.state.destreza}
+                destrezaModificador={this.state.destrezaModificador}
+                onChangeDestreza={this.onChangeDestreza}
+
+                constituicao={this.state.constituicao}
+                constituicaoModificador={this.state.constituicaoModificador}
+                onChangeConstituicao={this.onChangeConstituicao}
+
+                inteligencia={this.state.inteligencia}
+                inteligenciaModificador={this.state.inteligenciaModificador}
+                onChangeInteligencia={this.onChangeInteligencia}
+
+                sabedoria={this.state.sabedoria}
+                sabedoriaModificador={this.state.sabedoriaModificador}
+                onChangeSabedoria={this.onChangeSabedoria}
+
+                carisma={this.state.carisma}
+                carismaModificador={this.state.carismaModificador}
+                onChangeCarisma={this.onChangeCarisma}
+              />
+            </div>
+            <div class="col-sm">
+              <TestesResistencia
+                forcaModificador={this.state.forcaModificador}
+                destrezaModificador={this.state.destrezaModificador}
+                constituicaoModificador={this.state.constituicaoModificador}
+                inteligenciaModificador={this.state.inteligenciaModificador}
+                sabedoriaModificador={this.state.sabedoriaModificador}
+                carismaModificador={this.state.carismaModificador}
+              />
+            </div>
+
+            <div class="col-sm">
+              <Pericias
+                forcaModificador={this.state.forcaModificador}
+                destrezaModificador={this.state.destrezaModificador}
+                constituicaoModificador={this.state.constituicaoModificador}
+                inteligenciaModificador={this.state.inteligenciaModificador}
+                sabedoriaModificador={this.state.sabedoriaModificador}
+                carismaModificador={this.state.carismaModificador}
               />
             </div>
           </div>
-          <div className="row">
-            <div className="col-sm-4">
-              <div className="row">
-                <div className="col-4">
-                  <Habilidades
-                    forca={this.state.forca}
-                    forcaModificador={this.state.forcaModificador}
-                    onChangeForca={this.onChangeForca}
-
-                    destreza={this.state.destreza}
-                    destrezaModificador={this.state.destrezaModificador}
-                    onChangeDestreza={this.onChangeDestreza}
-
-                    constituicao={this.state.constituicao}
-                    constituicaoModificador={this.state.constituicaoModificador}
-                    onChangeConstituicao={this.onChangeConstituicao}
-
-                    inteligencia={this.state.inteligencia}
-                    inteligenciaModificador={this.state.inteligenciaModificador}
-                    onChangeInteligencia={this.onChangeInteligencia}
-
-                    sabedoria={this.state.sabedoria}
-                    sabedoriaModificador={this.state.sabedoriaModificador}
-                    onChangeSabedoria={this.onChangeSabedoria}
-
-                    carisma={this.state.carisma}
-                    carismaModificador={this.state.carismaModificador}
-                    onChangeCarisma={this.onChangeCarisma}
-                  />
-                </div>
-                <div className="col-8">
-                  <div className="row">
-                    <div className="col">
-                      <Inspiracao value="16" />
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col">
-                      <BonusProficiencia value="18" />
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col">
-                      <TestesResistencia
-                        forcaModificador={this.state.forcaModificador}
-                        destrezaModificador={this.state.destrezaModificador}
-                        constituicaoModificador={this.state.constituicaoModificador}
-                        inteligenciaModificador={this.state.inteligenciaModificador}
-                        sabedoriaModificador={this.state.sabedoriaModificador}
-                        carismaModificador={this.state.carismaModificador}
-                      />
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col">
-                      <Pericias
-                        forcaModificador={this.state.forcaModificador}
-                        destrezaModificador={this.state.destrezaModificador}
-                        constituicaoModificador={this.state.constituicaoModificador}
-                        inteligenciaModificador={this.state.inteligenciaModificador}
-                        sabedoriaModificador={this.state.sabedoriaModificador}
-                        carismaModificador={this.state.carismaModificador}
-                      />
-                    </div>
-                  </div>
-                </div>
-                  <div className="row">
-                    <div className="col">
-                      <SabedoriaPassivaPercepcao value="99"/>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col">
-                      <IdiomasProficiencias 
-                      value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."/>
-                    </div>
-                  </div>                  
-              </div>
-            </div>
-            <div className="col-sm-4">
-            </div>
-            <div className="col-sm-4">
-            </div>
-          </div>
-
-
-          <div className="row">
-            <div className="col-sm-4">
-              <div className="row">
-                <div className="col-sm-6">
-
-                </div>
-                <div className="col-sm-6">
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-4">
-            </div>
-            <div className="col-sm-4">
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-4">
-              <div className="row">
-                <div className="col-sm-6">
-
-                </div>
-                <div className="col-sm-6">
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-4">
-            </div>
-            <div className="col-sm-4">
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-4">
-              <div className="row">
-                <div className="col-sm-6">
-
-                </div>
-                <div className="col-sm-6">
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-4">
-            </div>
-            <div className="col-sm-4">
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-4">
-              <div className="row">
-                <div className="col-sm-6">
-
-                </div>
-                <div className="col-sm-6">
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-4">
-            </div>
-            <div className="col-sm-4">
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-4">
-              <div className="row">
-                <div className="col-sm-6">
-
-                </div>
-                <div className="col-sm-6">
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-4">
-            </div>
-            <div className="col-sm-4">
-            </div>
-          </div>
-
-
-
           <hr />
+
           <div className="row">
             <div className="col-sm">
 

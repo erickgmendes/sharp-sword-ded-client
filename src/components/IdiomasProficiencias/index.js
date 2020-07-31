@@ -4,24 +4,23 @@ import Image from '../../images/idiomas-proficiencias.png'
 
 const styles = {
     container: {
-        width: 376,
+        width: 300,
         height: 302,
         backgroundImage: `url(${Image})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        marginLeft: 10,
-        marginTop: 0,
-        marginBottom: 10,
+
+        border: 'solid',
+        borderColor: 'red'
     },
     inputValor: {
         width: 345,
         height: 260,
         position: 'absolute',
-        top: 13,
-        left: 43,
         fontSize: 14,
         border: 'none',
         resize: 'none',
+        margin: 4,
         textAlign: 'justify',
         //backgroundColor: '#dedfdf',        
     },

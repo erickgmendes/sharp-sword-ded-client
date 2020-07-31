@@ -4,245 +4,211 @@ import Image from '../../images/pericias.png'
 
 const styles = {
     container: {
-        width: 240,
-        height: 560,
-        backgroundImage: `url(${Image})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        marginLeft: 0,
-        marginTop: 0,
+        border: 'solid',
+        borderTopLeftRadius: 15,
+        borderColor: 'black',
+        borderBottomRightRadius: 15,
+        borderWidth: 3,
         marginBottom: 10,
+        maxHeight: 800,
+        padding: 12,
+        paddingTop: 0,
+        paddingBottom: 1,
+    },
+    label: {
+        fontSize: 14,
+    },
+    titulo: {
+        border: 'solid',
+        borderTopLeftRadius: 15,
+        borderColor: 'black',
+        color: 'white',
+        background: 'black',
+        paddingLeft: 0,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 14,
+        marginBottom: 8,
     },
     inputs: {
         width: 32,
-        height: 16,
-        position: 'absolute',
-        left: 56,
+        height: 20,
+        left: 57,
         textAlign: 'center',
         fontSize: 14,
-        border: 'none',
         fontWeight: 'bold'
     },
-    inputAcrobacia: {
-        top: 24,
-    },
-    inputArcanismo: {
-        top: 52,
-    },
-    inputAtletismo: {
-        top: 80,
-    },
-    inputAtuacao: {
-        top: 108,
-    },
-    inputBlefar: {
-        top: 136,
-    },
-    inputFurtividade: {
-        top: 164,
-    },
-    inputHistoria: {
-        top: 192,
-    },
-    inputIntimidacao: {
-        top: 220,
-    },
-    inputIntuicao: {
-        top: 248,
-    },
-    inputInvestigacao: {
-        top: 276,
-    },
-    inputLidarComAnimais: {
-        top: 304,
-    },
-    inputMedicina: {
-        top: 332,
-    },
-    inputNatureza: {
-        top: 360,
-    },
-    inputPercepcao: {
-        top: 388,
-    },
-    inputPersuasao: {
-        top: 416,
-    },
-    inputPrestidigitacao: {
-        top: 444,
-    },
-    inputReligiao: {
-        top: 472,
-    },
-    inputSobrevivencia: {
-        top: 500,
-    },   
 };
 
 const Pericias = props =>
-    <div style={styles.container}>
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputAcrobacia
-            }}
-            value={props.destrezaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputArcanismo
-            }}
-            value={props.inteligenciaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputAtletismo
-            }}
-            value={props.forcaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputAtuacao
-            }}
-            value={props.carismaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputBlefar
-            }}
-            value={props.carismaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputFurtividade
-            }}
-            value={props.destrezaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputHistoria
-            }}
-            value={props.inteligenciaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputIntimidacao
-            }}
-            value={props.carismaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputIntuicao
-            }}
-            value={props.sabedoriaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputInvestigacao
-            }}
-            value={props.inteligenciaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputLidarComAnimais
-            }}
-            value={props.sabedoriaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputMedicina
-            }}
-            value={props.sabedoriaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputNatureza
-            }}
-            value={props.inteligenciaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputPercepcao
-            }}
-            value={props.sabedoriaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputPersuasao
-            }}
-            value={props.carismaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputPrestidigitacao
-            }}
-            value={props.destrezaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputReligiao
-            }}
-            value={props.inteligenciaModificador}
-        />
-        <input
-            readOnly
-            type="text"
-            style={{
-                ...styles.inputs,
-                ...styles.inputSobrevivencia
-            }}
-            value={props.sabedoriaModificador}
-        />
+    <div className="container" style={styles.container}>
+        <div className="row align-items-start" style={styles.titulo}>
+            <div className="col">
+                <h6>PERÍCIAS</h6>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={styles.inputs}
+                    value={props.destrezaModificador}
+                /> <label style={styles.label}>Acrobacia</label>
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.inteligenciaModificador}
+                /> <label style={styles.label}>Arcanismo</label>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.forcaModificador}
+                /> <label style={styles.label}>Atletismo</label>
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.carismaModificador}
+                /> <label style={styles.label}>Atuação</label>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.carismaModificador}
+                /> <label style={styles.label}>Blefar</label>
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.destrezaModificador}
+                /> <label style={styles.label}>Furtividade</label>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.inteligenciaModificador}
+                /> <label style={styles.label}>História</label>
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.carismaModificador}
+                /> <label style={styles.label}>Intimidação</label>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.sabedoriaModificador}
+                /> <label style={styles.label}>Intuicao</label>
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.inteligenciaModificador}
+                /> <label style={styles.label}>Investigação</label>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.sabedoriaModificador}
+                /> <label style={styles.label}>Lidar com animal</label>
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.sabedoriaModificador}
+                /> <label style={styles.label}>Medicina</label>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.inteligenciaModificador}
+                /> <label style={styles.label}>Natureza</label>
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.sabedoriaModificador}
+                /> <label style={styles.label}>Percepção</label>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.carismaModificador}
+                /> <label style={styles.label}>Persuasão</label>
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.destrezaModificador}
+                /> <label style={styles.label}>Prestidigitação</label>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.inteligenciaModificador}
+                /> <label style={styles.label}>Religião</label>
+            </div>
+            <div className="col">
+                <input
+                    readOnly
+                    type="text"
+                    style={{ ...styles.inputs }}
+                    value={props.sabedoriaModificador}
+                /> <label style={styles.label}>Sobrevivência</label>
+            </div>
+        </div>
     </div>
 
 export default Pericias

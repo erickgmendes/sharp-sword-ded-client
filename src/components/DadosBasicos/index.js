@@ -4,10 +4,11 @@ import Image from '../../images/dados-basicos.png'
 
 const styles = {
     container: {
-        height: 219,
+        height: 201,
         width: 1177,
         textAlign: 'center',
         backgroundImage: `url(${Image})`,
+        backgroundRepeat: 'no-repeat',
         marginBottom: '4px'
     },      
     label: {
@@ -24,7 +25,7 @@ const styles = {
     inputNomePersonagem: {
         width: '350px',
         height: '36px',        
-        top: '100px',
+        top: '95px',
         left: '60px',
         textAlign: 'center',
         fontSize: '25px',
@@ -39,10 +40,10 @@ const styles = {
         border: 'none',
     },
     inputsCima: {
-        top: '81px',
+        top: '74px',
     },
     inputsBaixo: {
-        top: '135px',
+        top: '128px',
     },
     inputClasse: {
         left: '517px',
