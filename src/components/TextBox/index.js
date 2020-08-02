@@ -1,9 +1,29 @@
 import React from "react";
 
+const styles = {
+  input: {
+    borderTop: 0,
+    borderLeft: 0,
+    borderRight: 0,
+  },
+  label: {
+    textTransform: 'uppercase',
+    fontSize: 12
+  },
+}
+
 const TextBox = props =>
   <>
-    <label>{props.label}</label>
-    <input className="form-control form-control-sm" type="text" value={props.value} />
+    <input
+      type="text"
+      className="form-control form-control-sm"
+      value={props.value}
+      style={styles.input}
+    />
+    <label
+      style={styles.label}
+    >{props.label}
+    </label>
   </>
 
 export default TextBox

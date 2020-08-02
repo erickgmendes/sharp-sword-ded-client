@@ -1,6 +1,9 @@
 import React, { Component } from "react"
 
 // Componentes
+import TextBox from "../TextBox"
+import ComboBox from "../ComboBox"
+import LogoDeD from "../LogoDeD"
 import Habilidades from "../Habilidades"
 import TestesResistencia from "../TestesResistencia"
 import Pericias from "../Pericias"
@@ -146,8 +149,96 @@ export default class Ficha extends Component {
     return (
       <form onSubmit={this.onFormSubmit}>
         <div className="container" style={{ marginTop: 20 }}>
+          <div class="row">
+            <div class="col-sm">
+              <div class="row">
+                <div class="col-sm">
+                  <TextBox
+                    label="Nome do personagem"
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Jogador"
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Classe"
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Raça"
+                    lista={this.racas}
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  <ComboBox
+                    label="Nível"
+                    lista={this.state.niveis}
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Tendência"
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Divindade"
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Tamanho"
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Idade"
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Sexo"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  <TextBox
+                    label="Altura"
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Peso"
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Olhos"
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Cabelos"
+                  />
+                </div>
+                <div class="col-sm">
+                  <TextBox
+                    label="Pele"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
 
-
+          <div className="container" style={{ marginTop: 20 }}>
           <div class="row">
             <div class="col-sm">
               <Habilidades
